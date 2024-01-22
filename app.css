@@ -1,0 +1,374 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+
+.menu{
+    background-color: #ffffff;
+    color: #000000;
+    height: 70px;
+    width: 100%;
+    
+}
+
+.menu__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.menu__links{
+    height: 100%;
+    transition: transform .5s;
+    display: flex;
+   
+}
+
+.menu__item{
+    list-style: none;
+    position: relative;
+    height: 100%;
+    --clip: polygon(0 0, 100% 0, 100% 0, 0 0);
+    --transform: rotate(-90deg);
+}
+
+.menu__item:hover{
+    --clip: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    --transform: rotate(0);
+}
+
+.menu__link{
+    transition: 0.4s ease;
+    color: #000000;
+    text-decoration: none;
+    padding: 0 30px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    font-family: 'Helvetica Neue', bold, sans-serif;
+                                                
+}
+
+.menu__link:hover{
+    color: rgb(152, 152, 152);
+}
+
+
+.menu__arrow{
+    transform: var(--transform);
+    transition: transform .3s;
+    display: block;
+    margin-left: 3px;
+    position: relative;
+}
+
+.menu__nesting{
+    list-style: none;
+    transition:clip-path .3s;
+    clip-path: var(--clip);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: max-content;
+    transform: translateY(100%);
+    background-color: #647695;
+}
+
+.menu__link--inside{
+    padding: 30px 100px 30px 20px;
+}
+
+.menu__link--inside:hover{
+    background-color: #a0a0a0;
+}
+
+.menu__hamburguer{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    cursor: pointer;
+    display: none;
+}
+
+.menu__img{
+    display: block;
+    width: 36px;
+}
+
+@media (max-width:800px){
+    .menu__hamburguer{
+        display: flex;
+       
+    }
+    .menu{
+        width: 100%;
+    }
+    .menu__item{
+        --clip:0;
+        overflow:hidden ;
+    }
+
+    .menu__item--active{
+        --transform: rotate(0);
+        --background: #a0a0a0;
+    }
+
+    .menu__item--show{
+        background-color: var(--background);
+    }
+
+
+    .menu__links{
+        position: fixed;
+        max-width: 400px;
+        width: 100%;
+        top: 70px;
+        bottom: 0;
+        right: 0;
+        background-color: #ffffff;
+        overflow-y: auto;
+        display: grid;
+        grid-auto-rows: max-content;
+        transform: translateX(100%);
+
+    }
+
+    .menu__links--show{
+        transform: unset;
+        width: 100%;
+    }
+
+    .menu__link{
+        padding: 25px 0;
+        padding-left: 30px;
+        height: auto;
+    }
+
+    .menu__arrow{
+        margin-left: auto;
+        margin-right: 20px;
+    }
+
+    .menu__nesting{
+        display: grid;
+        position: unset;
+        width: 100%;
+        transform: translateY(0);
+        height: 0;
+        transition: height .3s;
+    }
+
+    .menu__link--inside{
+        width: 90%;
+        margin-left: auto;
+        border-left: 1px solid #033373;
+    }
+}
+
+
+.prog{
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+ 
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.prog h1{
+    margin-bottom: 70px;
+}
+
+hr{
+    width: 1000px;
+ 
+}
+
+.ene p{
+    color: #585858;
+    font-family: 'Montserrat', sans-serif;
+   text-align: center;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   margin-bottom: 40px;
+   font-size: 12px;
+   font-weight: 500;
+   line-heigh: 20px;
+
+    
+    
+}
+
+.ene h2{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 30px;
+}
+.About{
+    margin-bottom: 90px;
+}
+.About h2{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    
+}
+.About p{
+    color: #585858;
+    font-family: 'Montserrat', sans-serif;
+   text-align: center;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   margin-bottom: 40px;
+   font-size: 12px;
+   font-weight: 500;
+   line-heigh: 20px;
+}
+
+.f{
+    display: flex;
+}
+
+.f p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+}
+
+.sobre p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    color: #a0a0a0;
+}
+
+.card1{
+    font-family: 'Poppins', sans-serif;
+    background: #dcdcdc;
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    padding: 9px;
+    text-align: center;
+    margin-left: 10px;
+  
+}
+
+.card2{
+    font-family: 'Poppins', sans-serif;
+    background: #dcdcdc;
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 9px;
+    margin-left: 330px;
+}
+
+
+.card3{
+    font-family: 'Poppins', sans-serif;
+    background: #dcdcdc;
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 9px;
+    margin-left: 330px;
+}
+
+.len{
+    display: flex;
+}
+
+
+.card4{
+    font-family: 'Poppins', sans-serif;
+    background: #dcdcdc;
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 9px;
+    margin-left: 330px;
+}
+
+
+.card6{
+
+    font-family: 'Poppins', sans-serif;
+    background: #dcdcdc;
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 9px;
+    margin-left: 330px;
+    margin-right: 20px;
+}
+
+.lin{
+    display: flex;
+    
+}
+.escrim{
+    width: 100%;
+    
+}
+
+.escri p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    color: #a0a0a0;
+    position: absolute;
+    margin-bottom: 100px;
+    margin-left: 500px;
+    margin-top: 100px;
+}
+
+.escri h3{
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    color: #ffffff;
+    text-align: center;
+    margin-left: 200px;
+    margin-top: 200px;
+    z-index: 100;
+    font-size: 30px;
+}
+
+
+@media (max-width:800px){
+    .lin{
+        display: grid;
+        margin-right: 200px;
+    }
+    .len{
+        display: grid;
+        margin-right: 200px;
+    }
+    .card1{
+        margin-left: 330px;
+    }
+
+    .prog{
+        display: grid;
+    }
+    .f{
+        display: grid;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 768px) and (orientation: landscape) { 
+   .conteiner{
+    display: grid;
+   }
+
+}
